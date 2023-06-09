@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './header.component.scss';
 import { FaExternalLinkSquareAlt } from '@react-icons/all-files/fa/FaExternalLinkSquareAlt';
+import PulldownComponent from "../pulldown/pulldown.component";
 
 type HeaderComponentProps = {
     rogoImageUrl: string;
@@ -19,11 +20,29 @@ export type HeaderTabChild = {
 }
 
 const HeaderComponent: React.FC<HeaderComponentProps> = (props: HeaderComponentProps) => {
+    const [activeTab, setActiveTab] = useState('');
+
+    const handleMouseEnter = (tabName: string) => {
+        setActiveTab(tabName);
+    };
+
+    const handleMouseLeave = () => {
+        setActiveTab('');
+    };
+
     return (
         <div className="header">
             <img src={props.rogoImageUrl} className="logo" alt="logo"/>
             {props.headerTabs.map((tab, index)=> (
-                <div className="tab">{tab.headerTabName}{tab.isNewWindow && <FaExternalLinkSquareAlt className="icon external-link"/>}</div>
+                <div className="tab-wrapper" key={index}>
+                    <div
+                        className={`tab ${activeTab === tab.headerTabName ? 'active' : ''}`}
+                        onMouseEnter={() => handleMouseEnter(tab.headerTabName)}
+                        onMouseLeave={handleMouseLeave}>
+                        {tab.headerTabName}{tab.isNewWindow && <FaExternalLinkSquareAlt className="icon external-link"/>}
+                    </div>
+                    {activeTab === tab.headerTabName && (<PulldownComponent headerTabChilds={tab.headerTabChilds}></PulldownComponent>)}
+                </div>
             ))}
         </div>
     );
