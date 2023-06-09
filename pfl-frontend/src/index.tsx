@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import HeaderComponent from './ui-component/header/header.component';
+import {HEADER_LOGO_ROOT, HEADER_TABS} from "./constants";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <HeaderComponent
+      rogoImageUrl={HEADER_LOGO_ROOT}
+      headerTabs={HEADER_TABS}
+      ></HeaderComponent>
   </React.StrictMode>
 );
 
