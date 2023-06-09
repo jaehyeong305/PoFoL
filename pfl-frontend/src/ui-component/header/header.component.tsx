@@ -1,5 +1,6 @@
 import React from 'react';
 import './header.component.scss';
+import { FaExternalLinkSquareAlt } from '@react-icons/all-files/fa/FaExternalLinkSquareAlt';
 
 type HeaderComponentProps = {
     rogoImageUrl: string;
@@ -9,6 +10,7 @@ type HeaderComponentProps = {
 export type HeaderTab = {
     headerTabName: string;
     headerTabChilds: HeaderTabChild[];
+    isNewWindow?: boolean;
 }
 
 export type HeaderTabChild = {
@@ -21,7 +23,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props: HeaderComponentP
         <div className="header">
             <img src={props.rogoImageUrl} className="logo" alt="logo"/>
             {props.headerTabs.map((tab, index)=> (
-                <div className="tab">{tab.headerTabName}</div>
+                <div className="tab">{tab.headerTabName}{tab.isNewWindow && <FaExternalLinkSquareAlt className="icon external-link"/>}</div>
             ))}
         </div>
     );

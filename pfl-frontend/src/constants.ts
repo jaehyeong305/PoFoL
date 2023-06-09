@@ -40,11 +40,13 @@ export const HEADER_TABS: HeaderTab[] = [
     },
     {
         headerTabName: 'Blog',
-        headerTabChilds: []
+        headerTabChilds: [],
+        isNewWindow: true,
     },
     {
         headerTabName: 'Github',
-        headerTabChilds: []
+        headerTabChilds: [],
+        isNewWindow: true,
     },
     {
         headerTabName: 'Download',
