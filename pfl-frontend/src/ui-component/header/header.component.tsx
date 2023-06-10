@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import './header.component.scss';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { FaExternalLinkSquareAlt } from '@react-icons/all-files/fa/FaExternalLinkSquareAlt';
 import PulldownComponent from "../pulldown/pulldown.component";
+import { setHoveredTab } from '../../store/store';
+import './header.component.scss';
 
 type HeaderComponentProps = {
     rogoImageUrl: string;
@@ -20,14 +22,15 @@ export type HeaderTabChild = {
 }
 
 const HeaderComponent: React.FC<HeaderComponentProps> = (props: HeaderComponentProps) => {
-    const [activeTab, setActiveTab] = useState('');
+    const hoveredTab = useSelector((state: any) => state.hoveredTab);
+    const dispatch = useDispatch();
 
     const handleMouseEnter = (tabName: string) => {
-        setActiveTab(tabName);
+        dispatch(setHoveredTab(tabName));
     };
 
     const handleMouseLeave = () => {
-        setActiveTab('');
+        dispatch(setHoveredTab(''));
     };
 
     return (
@@ -36,12 +39,14 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props: HeaderComponentP
             {props.headerTabs.map((tab, index)=> (
                 <div className="tab-wrapper" key={index}>
                     <div
-                        className={`tab ${activeTab === tab.headerTabName ? 'active' : ''}`}
+                        className='tab'
                         onMouseEnter={() => handleMouseEnter(tab.headerTabName)}
                         onMouseLeave={handleMouseLeave}>
                         {tab.headerTabName}{tab.isNewWindow && <FaExternalLinkSquareAlt className="icon external-link"/>}
                     </div>
-                    {activeTab === tab.headerTabName && (<PulldownComponent headerTabChilds={tab.headerTabChilds}></PulldownComponent>)}
+                    {hoveredTab === tab.headerTabName &&
+                    tab.headerTabChilds.length > 0 &&
+                    (<PulldownComponent tabName={tab.headerTabName} headerTabChilds={tab.headerTabChilds}></PulldownComponent>)}
                 </div>
             ))}
         </div>

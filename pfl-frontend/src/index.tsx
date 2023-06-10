@@ -4,16 +4,21 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import HeaderComponent from './ui-component/header/header.component';
 import {HEADER_LOGO_ROOT, HEADER_TABS} from "./constants";
+import store from './store/store';
+import {Provider} from "react-redux";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <HeaderComponent
-      rogoImageUrl={HEADER_LOGO_ROOT}
-      headerTabs={HEADER_TABS}
-      ></HeaderComponent>
+    <Provider store={store}>
+      <HeaderComponent
+        rogoImageUrl={HEADER_LOGO_ROOT}
+        headerTabs={HEADER_TABS}
+        ></HeaderComponent>
+    </Provider>
   </React.StrictMode>
 );
 
