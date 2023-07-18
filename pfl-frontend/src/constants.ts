@@ -2,7 +2,7 @@ import {HeaderTab} from "./ui-component/header/header.component";
 
 // for Header
 
-export const HEADER_LOGO_ROOT: string = '/images/logo-black.png';
+export const HEADER_LOGO_ROOT: string = '/images/logo-black-removebg.png';
 export const HEADER_TABS: HeaderTab[] = [
     {
         headerTabName: 'Profile',

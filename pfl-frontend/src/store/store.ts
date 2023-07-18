@@ -1,4 +1,4 @@
-import { createStore } from 'redux';
+import {createStore} from 'redux';
 
 // 액션 타입 정의
 const SET_HOVERED_TAB = 'SET_HOVERED_TAB';
@@ -20,8 +20,8 @@ const reducer = (state = initialState, action: any) => {
                 ...state,
                 hoveredTab: action.payload,
             };
-            default:
-                return state;
+        default:
+            return state;
     }
 };
 
