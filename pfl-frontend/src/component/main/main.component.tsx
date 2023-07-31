@@ -8,7 +8,6 @@ const MainComponent: React.FC = () => {
   const [showHeader, setShowHeader] = useState(true);
 
   const handleScroll = ()=> {
-    console.log('??');
     const scrollPosition = window.scrollY;
     if (scrollPosition > 1) {
       setShowHeader(false);
