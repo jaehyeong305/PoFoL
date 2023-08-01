@@ -1,8 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { setHoveredTab } from '../../store/store';
-import { HeaderTabChild } from '../header/header.component';
 import './pulldown.component.scss';
+import { useDispatch } from 'react-redux';
+import { setHoveredTab } from 'store/store';
+import { HeaderTabChild } from 'ui-component/header/header.component';
 
 type PulldownProps = {
   tabName: string;

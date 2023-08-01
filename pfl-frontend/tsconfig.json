@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "components/*": ["./components/*"],
+      "ui-component/*": ["ui-component/*"],
+      "store/*": ["store/*"],
+      "images/*": ["../public/images/*"]
+    },
     "target": "es5",
     "lib": [
       "dom",

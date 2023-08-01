@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { HEADER_LOGO_ROOT, HEADER_TABS } from '../../constants';
-import HeaderComponent from '../../ui-component/header/header.component';
-import MainProfileComponent from './profile/main-profile.component';
 import './main.component.scss';
+import { HEADER_LOGO_ROOT, HEADER_TABS } from '../../constants';
+import HeaderComponent from 'ui-component/header/header.component';
+import MainProfileComponent from 'components/main/profile/main-profile.component';
 
 const MainComponent: React.FC = () => {
   const [showHeader, setShowHeader] = useState(true);
