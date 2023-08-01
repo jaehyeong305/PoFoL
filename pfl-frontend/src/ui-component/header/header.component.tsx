@@ -1,6 +1,9 @@
 import React from 'react';
-import './header.component.scss';
+import { useSelector, useDispatch } from 'react-redux';
 import { FaExternalLinkSquareAlt } from '@react-icons/all-files/fa/FaExternalLinkSquareAlt';
+import PulldownComponent from "../pulldown/pulldown.component";
+import { setHoveredTab } from '../../store/store';
+import './header.component.scss';
 
 type HeaderComponentProps = {
     rogoImageUrl: string;
@@ -19,11 +22,32 @@ export type HeaderTabChild = {
 }
 
 const HeaderComponent: React.FC<HeaderComponentProps> = (props: HeaderComponentProps) => {
+    const hoveredTab = useSelector((state: any) => state.hoveredTab);
+    const dispatch = useDispatch();
+
+    const handleMouseEnter = (tabName: string) => {
+        dispatch(setHoveredTab(tabName));
+    };
+
+    const handleMouseLeave = () => {
+        dispatch(setHoveredTab(''));
+    };
+
     return (
         <div className="header">
             <img src={props.rogoImageUrl} className="logo" alt="logo"/>
             {props.headerTabs.map((tab, index)=> (
-                <div className="tab">{tab.headerTabName}{tab.isNewWindow && <FaExternalLinkSquareAlt className="icon external-link"/>}</div>
+                <div className="tab-wrapper" key={index}>
+                    <div
+                        className='tab'
+                        onMouseEnter={() => handleMouseEnter(tab.headerTabName)}
+                        onMouseLeave={handleMouseLeave}>
+                        {tab.headerTabName}{tab.isNewWindow && <FaExternalLinkSquareAlt className="icon external-link"/>}
+                    </div>
+                    {hoveredTab === tab.headerTabName &&
+                    tab.headerTabChilds.length > 0 &&
+                    (<PulldownComponent tabName={tab.headerTabName} headerTabChilds={tab.headerTabChilds}></PulldownComponent>)}
+                </div>
             ))}
         </div>
     );
