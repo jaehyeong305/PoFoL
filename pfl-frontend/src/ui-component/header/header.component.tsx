@@ -25,6 +25,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props: HeaderComponentP
     const hoveredTab = useSelector((state: any) => state.hoveredTab);
     const dispatch = useDispatch();
 
+    // NOTE(hajae): hover한 tab 이름을 관리
     const handleMouseEnter = (tabName: string) => {
         dispatch(setHoveredTab(tabName));
     };
@@ -44,6 +45,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (props: HeaderComponentP
                         onMouseLeave={handleMouseLeave}>
                         {tab.headerTabName}{tab.isNewWindow && <FaExternalLinkSquareAlt className="icon external-link"/>}
                     </div>
+                    {/* NOTE(hajae): hover 여부에 따라 pulldown 표시*/}
                     {hoveredTab === tab.headerTabName &&
                     tab.headerTabChilds.length > 0 &&
                     (<PulldownComponent tabName={tab.headerTabName} headerTabChilds={tab.headerTabChilds}></PulldownComponent>)}

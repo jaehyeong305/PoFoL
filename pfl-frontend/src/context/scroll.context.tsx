@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 
+// NOTE(hajae): scroll의 높이 상태를 관리
 const ScrollContext = createContext<number>(0);
 
 export const useScrollContext = () => {

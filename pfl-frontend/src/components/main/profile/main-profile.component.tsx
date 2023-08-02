@@ -6,6 +6,7 @@ const MainProfileComponent: React.FC = () => {
   const [showScrollIcon, setShowScrollIcon] = useState(true);
   const scrollContext = useScrollContext();
 
+  // NOTE(hajae): scroll 높이에 따른 Scroll Icon 표시/숨김
   React.useEffect(() => {
     const handleScrollIcon = ()=> {
       if (scrollContext > 200) {

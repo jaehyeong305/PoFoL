@@ -9,6 +9,7 @@ const MainComponent: React.FC = () => {
   const [showHeader, setShowHeader] = useState(true);
   const scrollContext = useScrollContext();
 
+  // NOTE(hajae): scroll 높이에 따른 Header 표시/숨김
   React.useEffect(() => {
     const handleScroll = ()=> {
       if (scrollContext > 200) {
