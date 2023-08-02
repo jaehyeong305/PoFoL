@@ -3,7 +3,7 @@ import './header.component.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaExternalLinkSquareAlt } from '@react-icons/all-files/fa/FaExternalLinkSquareAlt';
 import PulldownComponent from "ui-component/pulldown/pulldown.component";
-import { setHoveredTab } from 'store/store';
+import { setHoveredTab } from 'store/pulldown.store';
 
 type HeaderComponentProps = {
     rogoImageUrl: string;

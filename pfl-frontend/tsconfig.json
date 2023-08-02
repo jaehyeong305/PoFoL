@@ -4,6 +4,7 @@
     "paths": {
       "components/*": ["./components/*"],
       "ui-component/*": ["ui-component/*"],
+      "context/*": ["context/*"],
       "store/*": ["store/*"],
       "images/*": ["../public/images/*"]
     },
