@@ -1,8 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { setHoveredTab } from '../../store/store';
-import { HeaderTabChild } from '../header/header.component';
 import './pulldown.component.scss';
+import { useDispatch } from 'react-redux';
+import { setHoveredTab } from 'store/pulldown.store';
+import { HeaderTabChild } from 'ui-component/header/header.component';
 
 type PulldownProps = {
   tabName: string;
@@ -12,6 +12,7 @@ type PulldownProps = {
 const PulldownComponent: React.FC<PulldownProps> = (props: PulldownProps) => {
   const dispatch = useDispatch();
 
+  // NOTE(hajae): Header뿐만 아니라 pulldown component 내부에 마우스 커서가 존재할 경우 hover 상태 유지
   const handleMouseEnter = (tabName: string) => {
     dispatch(setHoveredTab(tabName));
   };
