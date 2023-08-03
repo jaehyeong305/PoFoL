@@ -23,20 +23,20 @@ const MainProfileComponent: React.FC = () => {
     };
   }, [scrollContext]);
   
-  const [revealTextVisible, setRevealTextVisible] = useState(false);
+  const [mainCareerVisible, setMainCareerVisible] = useState(false);
 
   React.useEffect(() => {
-    const revealText = document.querySelector(".main-career");
+    const mainCareer = document.querySelector(".main-career");
 
     const handleScrollReveal = () => {
-      if (revealText) {
-        const revealTextPosition = revealText.getBoundingClientRect().top;
+      if (mainCareer) {
+        const mainCareerPosition = mainCareer.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
 
-        if (revealTextPosition < windowHeight * 0.8) {
-          setRevealTextVisible(true);
+        if (mainCareerPosition < windowHeight * 0.8) {
+          setMainCareerVisible(true);
         } else {
-          setRevealTextVisible(false);
+          setMainCareerVisible(false);
         }
       }
     };
@@ -46,7 +46,7 @@ const MainProfileComponent: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScrollReveal);
     };
-    }, []);
+  }, []);
 
   return (
     <div className="main-container">
@@ -58,7 +58,7 @@ const MainProfileComponent: React.FC = () => {
             <span className="discription2">소통하는 <span className="position">Front-End Developer</span></span>
           <span className="discription3"><span className="name">하재형</span> 입니다.</span>
         </div>
-        <div className={`main-career ${revealTextVisible ? 'show' : ''}`}>
+        <div className={`main-career ${mainCareerVisible ? 'show' : ''}`}>
           <span className="main-title">개발자 경력 총 4년 1개월</span>
           <span className="main-section1">
             <img src="/images/bizreach-img.png" alt=""></img>
