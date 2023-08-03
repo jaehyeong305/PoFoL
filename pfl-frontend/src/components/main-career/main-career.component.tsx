@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./main-career.component.scss";
+import MainCareerItemComponent from "components/main-career-item/main-career-item.component";
 
 const MainCareerComponent: React.FC = () => {
     const [mainCareerVisible, setMainCareerVisible] = useState(false);
@@ -18,7 +19,7 @@ const MainCareerComponent: React.FC = () => {
             if (mainCareerPosition < windowHeight * 0.8) {
                 setMainCareerVisible(true);
 
-                const dateItemHeight = 400;
+                const dateItemHeight = 300;
                 const scrolledDateIndex = Math.floor(
                     (windowHeight * 0.5 - mainCareerPosition) / dateItemHeight
                 );
@@ -53,7 +54,9 @@ const MainCareerComponent: React.FC = () => {
                 </div>
 
                 {/* NOTE(hajae): 경력 라인(시간의 흐름 표시하기 위한 세로로 긴 줄) */}
-                <div className={`line-column ${mainCareerVisible ? "show" : ""}`}></div>
+                <div className="line-column">
+                    <div className={`line ${mainCareerVisible ? "show" : ""}`}></div>
+                </div>
 
                 {/* NOTE(hajae): 경력 아이템 */}
                 <div className="content-column">
@@ -63,11 +66,12 @@ const MainCareerComponent: React.FC = () => {
                             className={`content ${index <= selectedDateIndex ? "current" : ""}`}
                         >
                             {index === 0 && (
-                                <div>Content for 2019.04</div>
-                            )}
-
-                            {index === 1 && (
-                                <div>Content for 2020.01</div>
+                                <MainCareerItemComponent
+                                    imgUrl={"/images/bizreach-img.png"}
+                                    imgDiscription={"일본 전직(転職)사이트 1위 기업"}
+                                    title={"일본기업 Bizreach(ビズリーチ) 입사"}
+                                    description={"일본 전직(転職) 업계 1위 기업. 신졸(新卒) 엔지니어로 취업성공하여 일본생활을 시작한 시기. \n 입사 후, 5개월동안 신입 연수(비즈니스 매너, 개발 연수 등)를 수료. \n \n 회사명 : 株式会社 ビズリーチ \n 사원수 : 2,000명↑, 매출액 : 4,395억 \n 회사소개 : 전직(転職), 헤드헌터 및 하이 클래스 채용"}
+                                />
                             )}
                         </div>
                     ))}

@@ -54,16 +54,16 @@
     /* NOTE: The line column */
     > div.table-container > div.line-column {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0 50px 0 150px;
-        width: 10px;
-        background-color: #30475e;
-        opacity: 0;
-        
-        &.show {
-            animation: lineSlideIn 1s ease-in-out forwards;
+
+        > div.line {
+            margin: 0 120px 0 150px;
+            width: 10px;
+            background-color: #30475e;
+            opacity: 0;
+
+            &.show {
+                animation: lineSlideIn 1s ease-in-out forwards;
+            }
         }
     }
 
@@ -75,6 +75,15 @@
         align-items: flex-start;
         font-size: 24px;
         color: #30475e;
+
+        > div.content {
+            opacity: 0;
+            transition: opacity 1.5s ease;
+
+            &.current {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -87,13 +96,6 @@
 }
 
 @keyframes lineSlideIn {
-    100% {
-        margin-left: 100px;
-        opacity: 1;
-    }
-}
-
-@keyframes contentSlideIn {
     100% {
         margin-left: 100px;
         opacity: 1;
