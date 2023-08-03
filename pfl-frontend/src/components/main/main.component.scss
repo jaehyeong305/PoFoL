@@ -1,8 +1,11 @@
 .header {
     transition: opacity 0.5s ease;
     opacity: 1;
+    z-index: 9999;
 }
 
 .header.hide {
     opacity: 0;
+    pointer-events: none;
+    z-index: 0;
 }
