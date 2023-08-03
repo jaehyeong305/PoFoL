@@ -61,67 +61,6 @@ div.main {
             z-index: 0;
         }
     }
-
-    // NOTE(hajae): main-career styles
-    > div.main-career {
-        height: 2000px;
-        background-color: #f5f5f5;
-        overflow: hidden;
-        position: relative;
-
-        > span.main-title {
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            bottom: 92%;
-            left: 20%;
-            opacity: 0;
-            white-space: nowrap;
-            color: #30475E;
-            font-size: 50px;
-            font-weight: 700;
-        }
-
-        > div.line {
-            width: 10px;
-            height: 90%;
-            background-color: #30475E;
-            position: absolute;
-            left: 30%;
-            top: 10%;
-            opacity: 0;
-            transform: translateX(-50%);
-
-            &.show {
-                animation: lineSlideIn 1s ease-in-out forwards;
-            }
-        }
-
-        // NOTE(hajae): date-container styles
-        > div.date-container {
-            position: absolute;
-            left: 12%;
-            top: 13%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            > div.date {
-                font-size: 36px;
-                font-weight: 900;
-                color: #F05454;
-                opacity: 0;
-                transition: opacity 2s ease;
-                margin-top: 5px;
-                margin-bottom: 400px;
-
-                &.current {
-                    opacity: 1;
-                }
-            }
-        }
-    }
 }
 
 // NOTE(hajae): animation keyframes
@@ -134,43 +73,5 @@ div.main {
     }
     60% {
         transform: translateY(-10px);
-    }
-}
-
-@keyframes lineSlideIn {
-    100% {
-        left: 25%;
-        opacity: 1;
-    }
-}
-
-/* TODO(hajae): Component화 */
-div.main-career > span.main-section1 {
-    bottom: 28%;
-    text-align: center;
-    font-size: 0;
-}
-
-div.main-career > span.main-section1 > img {
-    margin-bottom: 10px;
-    display: block;
-    width: 400px;
-    border-radius: 10px;
-}
-
-div.main-career > span.main-section1 > span {
-    font-size: 24px;
-    color: #30475E;
-}
-
-/* animation styles */
-div.main-career.show span {
-    animation: slideIn 1s ease-in-out forwards;
-}
-
-@keyframes slideIn {
-    100% {
-        left: 10%;
-        opacity: 1;
     }
 }

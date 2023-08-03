@@ -1,0 +1,101 @@
+/* main-career styles */
+.main-career {
+    height: 2000px;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    > span.main-title {
+        margin: 100px 0 0 200px;
+        white-space: nowrap;
+        color: #30475e;
+        font-size: 50px;
+        font-weight: 700;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        
+        &.show {
+            animation: titleSlideIn 1s ease-in-out forwards;
+        }
+    }
+
+    > div.table-container {
+        display: flex;
+        margin: 50px 0 0 80px;
+        opacity: 1;
+        transition: opacity 1s ease;
+    }
+
+    /* NOTE: The date column */
+    > div.table-container > div.date-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: 20px;
+        font-size: 36px;
+        font-weight: 900;
+        color: #f05454;
+        
+        > div.date {
+            height: 400px;
+            padding-top: 50px;
+            opacity: 0;
+            transition: opacity 2s ease;
+            
+            &.current {
+                opacity: 1;
+            }
+        }
+    }
+
+    /* NOTE: The line column */
+    > div.table-container > div.line-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 50px 0 150px;
+        width: 10px;
+        background-color: #30475e;
+        opacity: 0;
+        
+        &.show {
+            animation: lineSlideIn 1s ease-in-out forwards;
+        }
+    }
+
+    /* NOTE: The content column */
+    > div.table-container > div.content-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 24px;
+        color: #30475e;
+    }
+}
+
+/* animation keyframes */
+@keyframes titleSlideIn {
+    100% {
+        margin-left: 100px;
+        opacity: 1;
+    }
+}
+
+@keyframes lineSlideIn {
+    100% {
+        margin-left: 100px;
+        opacity: 1;
+    }
+}
+
+@keyframes contentSlideIn {
+    100% {
+        margin-left: 100px;
+        opacity: 1;
+    }
+}
