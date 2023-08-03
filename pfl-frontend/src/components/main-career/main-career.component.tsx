@@ -6,7 +6,7 @@ const MainCareerComponent: React.FC = () => {
     const [mainCareerVisible, setMainCareerVisible] = useState(false);
     const [selectedDateIndex, setSelectedDateIndex] = useState(0);
 
-    const dateList = ["2019.04", "2020.01", "2021.06", "2022.09"];
+    const dateList = ["2019.04", "2019.08", "2021.06", "2022.09"];
 
     useEffect(() => {
         const handleScrollReveal = () => {
@@ -73,6 +73,15 @@ const MainCareerComponent: React.FC = () => {
                                     description={"일본 전직(転職) 업계 1위 기업. 신졸(新卒) 엔지니어로 취업성공하여 일본생활을 시작한 시기. \n 입사 후, 5개월동안 신입 연수(비즈니스 매너, 개발 연수 등)를 수료. \n \n 회사명 : 株式会社 ビズリーチ \n 사원수 : 2,000명↑, 매출액 : 4,395억 \n 회사소개 : 전직(転職), 헤드헌터 및 하이 클래스 채용"}
                                 />
                             )}
+
+                            {index === 1 && (
+                                <MainCareerItemComponent
+                                    imgUrl={"/images/hrmos-img.png"}
+                                    imgDiscription={"Hrmos 채용"}
+                                    title={"Hrmos채용 부서에 배속"}
+                                    description={"하하"}
+                                />
+                                )}
                         </div>
                     ))}
                 </div>

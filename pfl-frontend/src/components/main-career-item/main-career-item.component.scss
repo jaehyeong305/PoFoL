@@ -1,8 +1,9 @@
 div.item-container {
     display: flex;
     margin-top: 30px;
+    min-height: 400px;
     flex-direction: row;
-    
+
     > div.img-section {
         margin-right: 30px;
         bottom: 28%;
