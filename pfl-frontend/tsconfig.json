@@ -3,6 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "components/*": ["./components/*"],
+      "containers/*": ["./containers/*"],
       "ui-component/*": ["ui-component/*"],
       "context/*": ["context/*"],
       "store/*": ["store/*"],
