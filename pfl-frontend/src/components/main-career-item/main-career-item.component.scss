@@ -23,17 +23,47 @@ div.item-container {
         }
     }
 
-    div {
+    > div {
+        display: flex;
+        flex-direction: column;
         max-width: 500px;
-        
+
         > span.item-title {
             font-size: 24px;
             font-weight: 700;
         }
-    
+
         > p.item-discription {
             margin: 10px 0 0 0;
             font-size: 16px;
+            min-width: 500px;
+        }
+
+        > span.item-link {
+            margin-top: 10px;
+            margin-left: auto;
+
+            > a {
+                font-size: 16px;
+                font-weight: 500;
+                color: #f05454;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+
+                > span.new-window {
+                    &::before {
+                        position: relative;
+                        content: "\e89e";
+                        font-family: "Material Icons";
+                        font-size: 18px;
+                        display: inline-block;
+                        top: 3px;
+                    }
+                }
+            }
         }
     }
 }
