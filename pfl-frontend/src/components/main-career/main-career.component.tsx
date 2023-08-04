@@ -56,6 +56,11 @@ const MainCareerComponent: React.FC = () => {
                 {/* NOTE(hajae): 경력 라인(시간의 흐름 표시하기 위한 세로로 긴 줄) */}
                 <div className="line-column">
                     <div className={`line ${mainCareerVisible ? "show" : ""}`}></div>
+                    <div className="circle-container">
+                        {dateList.map((date, index) => (
+                            <div key={index} className={`small-circle ${index <= selectedDateIndex ? "current" : ""}`}></div>
+                         ))}
+                    </div>
                 </div>
 
                 {/* NOTE(hajae): 경력 아이템 */}
