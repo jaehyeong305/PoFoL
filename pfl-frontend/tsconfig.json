@@ -7,7 +7,8 @@
       "ui-component/*": ["ui-component/*"],
       "context/*": ["context/*"],
       "store/*": ["store/*"],
-      "images/*": ["../public/images/*"]
+      "images/*": ["../public/images/*"],
+      "constants/*": ["./constants/*"]
     },
     "target": "es5",
     "lib": [

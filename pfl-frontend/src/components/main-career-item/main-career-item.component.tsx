@@ -1,7 +1,7 @@
 import React from 'react';
 import './main-career-item.component.scss';
 
-type MainCareerItemProps = {
+export type MainCareerItemProps = {
     imgUrl: string;
     imgDiscription: string;
     title: string;
@@ -28,7 +28,11 @@ const MainCareerItemComponent: React.FC<MainCareerItemProps> = (props: MainCaree
             <div>
                 <span className="item-title"> {props.title} </span>
                 <p className="item-discription"> {descriptionWithLineBreaks} </p>
-                <span className="item-link"> <a href={props.linkUrl}>{props.linkTitle} <span className="new-window"></span></a> </span>
+                <span className="item-link">
+                    <a href={props.linkUrl}>
+                        {props.linkTitle}
+                        {props.linkIsNewWindow && <span className="new-window"></span>}
+                    </a> </span>
             </div>
         </div>
     )

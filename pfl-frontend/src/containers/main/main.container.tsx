@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './main.container.scss';
-import { HEADER_LOGO_ROOT, HEADER_TABS } from '../../constants';
+import { HEADER_LOGO_ROOT, HEADER_TABS } from 'constants/AppConstants';
 import HeaderComponent from 'ui-component/header/header.component';
 import MainComponent from 'components/main/main.component';
 import { useScrollContext } from "context/scroll.context";
