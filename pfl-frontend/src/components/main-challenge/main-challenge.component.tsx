@@ -47,12 +47,12 @@ const MainChallengeComponent: React.FC = () => {
             <div className={`description ${isImageFixed ? "current" : ""}`}>
                 <p className="text-box">
                     <span style={{transform: `translate3d(0px, ${transformY}px, 0px)`, opacity: `${textOpacity}`}}>일본에서 경험을 쌓고</span>
-                    <span style={{transform: `translate3d(0px, ${transformY}px, 0px)`}}>다양한 경험으로 전문성을 발전시키고</span>
+                    <span style={{transform: `translate3d(0px, ${transformY}px, 0px)`}}>새로운 도전으로 여러 경험을 쌓고</span>
                 </p>
                 <p className="text-box">
                     <span style={{transform: `translate3d(0px, ${transformY}px, 0px)`, opacity: `${textOpacity}`}}>한국에서 새로운 도전을 위해 귀국했습니다.</span>
                     <span
-                        style={{transform: `translate3d(0px, ${transformY}px, 0px)`}}>[TODO] 문구는 나중에 한번 생각해보도록 하자</span>
+                        style={{transform: `translate3d(0px, ${transformY}px, 0px)`}}>이러한 경험으로 전문성을 발전시키는 개발자가 되고 싶습니다.</span>
                 </p>
             </div>
         </div>
