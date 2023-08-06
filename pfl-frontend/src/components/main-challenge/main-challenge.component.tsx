@@ -11,25 +11,30 @@ const MainChallengeComponent: React.FC = () => {
 
     useEffect(() => {
         const handleScroll = () => {
+            const mainChallenge = document.querySelector(".main-challenge");
+            if (!mainChallenge) return;
+
+            const mainChallengePosition = mainChallenge.getBoundingClientRect().top;
+
             // NOTE(hajae): 해당 컴포넌트가 스크롤 되었을 때, 해당 이미지를 화면에 고정한다.
-            if (scrollContext >= 3750 && scrollContext <= 5500) {
+            if (mainChallengePosition <= 0 && mainChallengePosition >= -1750) {
                 setIsImageFixed(true);
                 // NOTE(hajae): 또한, 해당 컴포넌트를 벗어날 때, 투명도를 높여 없어지는 듯이 표시한다.
-                const opacity = 1 - (scrollContext - 5000) / 500;
+                const opacity = ((mainChallengePosition + 1750) / 500);
                 setOpacity(opacity);
             } else {
                 setIsImageFixed(false);
             }
 
             // NOTE(hajae): 해당 컴포넌트를 스크롤 할 때, 텍스트가 아래에서 올라오는 듯이 표시한다.
-            if (scrollContext >= 3750 && scrollContext <= 4900) {
-                const y = 42 - ((scrollContext - 3750) / (4900 - 3750)) * (42 + 65);
+            if (mainChallengePosition <= 0 && mainChallengePosition >= -1150) {
+                const y = 42 - (mainChallengePosition / -1150) * (42 + 65);
                 setTransformY(y);
             }
 
             // NOTE(hajae): 텍스트가 올라가며 없어질 때, 투명도를 높여 없어지는 듯이 표시한다.
-            if (scrollContext >= 4300 && scrollContext <= 4700) {
-                const textOpacity = 1 - (scrollContext - 4300) / (4700 - 4300);
+            if (mainChallengePosition <= -550 && mainChallengePosition >= -950) {
+                const textOpacity = (mainChallengePosition + 950 ) / 400;
                 setTextOpacity(textOpacity);
             }
         };
