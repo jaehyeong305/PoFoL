@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import store from 'store/pulldown.store';
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import MainComponent from "components/main/main.component";
+import MainContainer from "containers/main/main.container";
 import { ScrollProvider } from 'context/scroll.context';
 
 const root = ReactDOM.createRoot(
@@ -16,7 +16,7 @@ root.render(
         <ScrollProvider>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<MainComponent/>}></Route>
+                    <Route path="/" element={<MainContainer/>}></Route>
                 </Routes>
             </BrowserRouter>
         </ScrollProvider>

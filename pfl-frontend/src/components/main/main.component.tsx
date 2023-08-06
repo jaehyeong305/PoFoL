@@ -1,38 +1,39 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './main.component.scss';
-import { HEADER_LOGO_ROOT, HEADER_TABS } from '../../constants';
-import HeaderComponent from 'ui-component/header/header.component';
-import MainProfileComponent from 'components/main/profile/main-profile.component';
-import { useScrollContext } from "context/scroll.context";
+import {useScrollContext} from 'context/scroll.context';
+import MainCareerComponent from "components/main-career/main-career.component";
+import MainChallengeComponent from "components/main-challenge/main-challenge.component";
 
 const MainComponent: React.FC = () => {
-  const [showHeader, setShowHeader] = useState(true);
-  const scrollContext = useScrollContext();
+    const [showScrollIcon, setShowScrollIcon] = useState(true);
+    const scrollContext = useScrollContext();
 
-  // NOTE(hajae): scroll 높이에 따른 Header 표시/숨김
-  React.useEffect(() => {
-    const handleScroll = ()=> {
-      if (scrollContext > 200) {
-        setShowHeader(false);
-      } else {
-        setShowHeader(true);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
+    useEffect(() => {
+        const handleScrollIcon = () => {
+            setShowScrollIcon(scrollContext <= 200);
+        };
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrollContext]);
+        window.addEventListener('scroll', handleScrollIcon);
 
-  return (
-    <div>
-      <header className={`header ${showHeader ? 'show' : 'hide'}`}>
-        <HeaderComponent rogoImageUrl={HEADER_LOGO_ROOT} headerTabs={HEADER_TABS} />
-      </header>
-      <MainProfileComponent />
-    </div>
+        return () => {
+            window.removeEventListener('scroll', handleScrollIcon);
+        };
+    }, [scrollContext]);
+
+    return (
+        <div className="main-container">
+            <div className="main">
+                <img src="images/main-background.png" alt=""/>
+                <img src="images/scroll.png" alt="" className={`plz-scroll ${showScrollIcon ? 'show' : 'hide'}`}/>
+                <div className="discription">
+                    <span className="discription1">환영합니다.</span>
+                    <span className="discription2">소통하는 <span className="position">Front-End Developer</span></span>
+                    <span className="discription3"><span className="name">하재형</span> 입니다.</span>
+                </div>
+            </div>
+            <MainCareerComponent/>
+            <MainChallengeComponent/>
+        </div>
     );
 };
 
