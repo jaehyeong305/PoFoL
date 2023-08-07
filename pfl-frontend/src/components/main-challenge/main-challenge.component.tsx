@@ -3,7 +3,6 @@ import React, {useState, useEffect} from 'react';
 import './main-challenge.component.scss';
 
 const MainChallengeComponent: React.FC = () => {
-    const scrollContext = useScrollContext();
     const [isImageFixed, setIsImageFixed] = useState(false);
     const [opacity, setOpacity] = useState(0.7);
     const [textOpacity, setTextOpacity] = useState(1);
@@ -43,7 +42,7 @@ const MainChallengeComponent: React.FC = () => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [scrollContext]);
+    }, []);
 
     return (
         <div className="main-challenge">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './main-core-competencies-item.component.scss';
 
 type MainCoreCompetenciesItemProps = {
@@ -7,13 +7,33 @@ type MainCoreCompetenciesItemProps = {
     itemDescription: string,
 }
 const MainCoreCompetenciesItemComponent: React.FC<MainCoreCompetenciesItemProps> = (props: MainCoreCompetenciesItemProps) => {
+    const [isCurrent, setIsCurrent] = useState(false);
+    const itemRef = React.createRef<HTMLDivElement>();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const itemPosition = itemRef.current?.getBoundingClientRect().top || 0;
+
+            if (itemPosition < 800) {
+                setIsCurrent(true);
+            } else {
+                setIsCurrent(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+        }, [itemRef]);
+
 
     return (
-        <div className="main-core-competencies-item">
+        <div ref={itemRef} className={`main-core-competencies-item ${isCurrent ? 'current' : ''}`}>
             <div className="image">
-                <img src={props.imageUrl} alt="" />
+                <img src={props.imageUrl} alt=""/>
             </div>
-            <div className="content">
+            <div className="core-competencies-item-content">
                 <span className="item-title">
                     {props.itemTitle}
                 </span>
@@ -22,7 +42,7 @@ const MainCoreCompetenciesItemComponent: React.FC<MainCoreCompetenciesItemProps>
                 </span>
             </div>
         </div>
-        );
+    );
 };
 
 export default MainCoreCompetenciesItemComponent;
