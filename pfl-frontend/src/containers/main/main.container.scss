@@ -1,10 +1,10 @@
 .header {
-    transition: opacity 0.5s ease;
-    opacity: 1;
-    z-index: 9999;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 .header.hide {
-    opacity: 0;
-    pointer-events: none;
+  pointer-events: none;
+  opacity: 0;
 }

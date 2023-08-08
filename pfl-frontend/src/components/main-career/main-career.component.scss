@@ -1,136 +1,136 @@
 /* main-career styles */
 .main-career {
-    position: relative;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+
+  > span.main-title {
+    margin: 100px 0 0 200px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #30475e;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    &.show {
+      animation: titleSlideIn 1s ease-in-out forwards;
+    }
+  }
+
+  > div.table-container {
+    display: flex;
+    margin: 50px 0 30px 80px;
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+
+  /* NOTE: The date column */
+  > div.table-container > div.date-column {
     display: flex;
     flex-direction: column;
-    margin-bottom: 80px;
-    background-color: #f5f5f5;
-    overflow: hidden;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 20px;
+    font-size: 36px;
+    font-weight: 900;
+    color: #f05454;
 
-    > span.main-title {
-        margin: 100px 0 0 200px;
-        white-space: nowrap;
-        color: #30475e;
-        font-size: 50px;
-        font-weight: 700;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
+    > div.date {
+      height: 400px;
+      padding-top: 50px;
+      opacity: 0;
+      transition: opacity 2s ease;
 
-        &.show {
-            animation: titleSlideIn 1s ease-in-out forwards;
-        }
-    }
-
-    > div.table-container {
-        display: flex;
-        margin: 50px 0 30px 80px;
+      &.current {
         opacity: 1;
-        transition: opacity 1s ease;
+      }
+    }
+  }
+
+  /* NOTE: The line column */
+  > div.table-container > div.line-column {
+    display: flex;
+
+    > div.line {
+      width: 10px;
+      margin: 0 120px 0 150px;
+      background-color: #30475e;
+      opacity: 0;
+
+      &.show {
+        animation: lineSlideIn 1s ease-in-out forwards;
+      }
+
+      // NOTE(hajae): line아래 화살표 표시
+      &::before {
+        position: absolute;
+        bottom: 5px;
+        left: 340px;
+        content: "";
+        border-top: 30px solid #30475e;
+        border-right: 20px solid transparent;
+        border-left: 20px solid transparent;
+      }
     }
 
-    /* NOTE: The date column */
-    > div.table-container > div.date-column {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        margin-right: 20px;
-        font-size: 36px;
-        font-weight: 900;
-        color: #f05454;
+    > div.circle-container > div.small-circle {
+      position: absolute;
+      left: 348px;
+      width: 25px;
+      height: 25px;
+      background-color: #30475e;
+      border-radius: 50%;
+      opacity: 0;
 
-        > div.date {
-            height: 400px;
-            padding-top: 50px;
-            opacity: 0;
-            transition: opacity 2s ease;
+      &.current {
+        opacity: 1;
+        // NOTE(hajae): 사라지는 애니메이션에 화면 표시가 이상하기 때문에 바로 사라지게 current안에 transition를 작성.
+        transition: opacity 1.5s ease 0.5s;
+      }
 
-            &.current {
-                opacity: 1;
-            }
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          margin-top: calc(60px + ($i - 1) * 450px);
         }
+      }
     }
+  }
 
-    /* NOTE: The line column */
-    > div.table-container > div.line-column {
-        display: flex;
+  /* NOTE: The content column */
+  > div.table-container > div.content-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 24px;
+    color: #30475e;
 
-        > div.line {
-            margin: 0 120px 0 150px;
-            width: 10px;
-            background-color: #30475e;
-            opacity: 0;
+    > div.content {
+      opacity: 0;
+      transition: opacity 1.5s ease;
 
-            &.show {
-                animation: lineSlideIn 1s ease-in-out forwards;
-            }
-
-            // NOTE(hajae): line아래 화살표 표시
-            &::before {
-                content: "";
-                position: absolute;
-                bottom: 5px;
-                left: 340px;
-                border-left: 20px solid transparent;
-                border-right: 20px solid transparent;
-                border-top: 30px solid #30475e;
-            }
-        }
-
-        > div.circle-container > div.small-circle {
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            left: 348px;
-            background-color: #30475e;
-            border-radius: 50%;
-            opacity: 0;
-
-            &.current {
-                // NOTE(hajae): 사라지는 애니메이션에 화면 표시가 이상하기 때문에 바로 사라지게 current안에 transition를 작성.
-                transition: opacity 1.5s ease 0.5s;
-                opacity: 1;
-            }
-
-            @for $i from 1 through 4 {
-                &:nth-child(#{$i}) {
-                    margin-top: calc(60px + ($i - 1) * 450px);
-                }
-            }
-        }
+      &.current {
+        opacity: 1;
+      }
     }
-
-    /* NOTE: The content column */
-    > div.table-container > div.content-column {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        font-size: 24px;
-        color: #30475e;
-
-        > div.content {
-            opacity: 0;
-            transition: opacity 1.5s ease;
-
-            &.current {
-                opacity: 1;
-            }
-        }
-    }
+  }
 }
 
 /* animation keyframes */
 @keyframes titleSlideIn {
-    100% {
-        margin-left: 100px;
-        opacity: 1;
-    }
+  100% {
+    margin-left: 100px;
+    opacity: 1;
+  }
 }
 
 @keyframes lineSlideIn {
-    100% {
-        margin-left: 100px;
-        opacity: 1;
-    }
+  100% {
+    margin-left: 100px;
+    opacity: 1;
+  }
 }
