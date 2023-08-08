@@ -3,6 +3,7 @@ import './main.component.scss';
 import {useScrollContext} from 'context/scroll.context';
 import MainCareerComponent from "components/main-career/main-career.component";
 import MainChallengeComponent from "components/main-challenge/main-challenge.component";
+import MainCoreCompetenciesComponent from 'components/main-core-competencies/main-core-competencies.component';
 
 const MainComponent: React.FC = () => {
     const [showScrollIcon, setShowScrollIcon] = useState(true);
@@ -33,6 +34,7 @@ const MainComponent: React.FC = () => {
             </div>
             <MainCareerComponent/>
             <MainChallengeComponent/>
+            <MainCoreCompetenciesComponent/>
         </div>
     );
 };
