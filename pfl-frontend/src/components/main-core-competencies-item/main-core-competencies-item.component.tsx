@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './main-core-competencies-item.component.scss';
 
-type MainCoreCompetenciesItemProps = {
+export type MainCoreCompetenciesItemProps = {
     imageUrl: string,
     itemTitle: string,
     itemDescription: string,
