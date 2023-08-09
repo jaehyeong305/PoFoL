@@ -29,7 +29,7 @@ const MainCareerItemComponent: React.FC<MainCareerItemProps> = (props: MainCaree
                 <span className="item-title"> {props.title} </span>
                 <p className="item-discription"> {descriptionWithLineBreaks} </p>
                 <span className="item-link">
-                    <a href={props.linkUrl}>
+                    <a href={props.linkUrl} target={props.linkIsNewWindow ? "_blank" : ""} rel="noreferrer">
                         {props.linkTitle}
                         {props.linkIsNewWindow && <span className="new-window"></span>}
                     </a> </span>
