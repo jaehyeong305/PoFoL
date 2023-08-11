@@ -1,0 +1,19 @@
+div.table-container {
+    table-layout: fixed;
+    margin: 20px;
+    width: 100%;
+    
+    > table.hajae-table {
+        > tbody > tr > th {
+            width: 120px;
+            color: #16547e;
+            padding: 10px 20px 0 0;
+            text-align: right;
+            font-weight: 500;
+        }
+    
+        > tbody > tr > td {
+            padding-top: 10px;
+        }
+    }
+}
