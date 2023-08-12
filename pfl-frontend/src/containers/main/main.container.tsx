@@ -7,7 +7,7 @@ import FooterComponent from "ui-component/footer/footer.component";
 
 const MainContainer: React.FC = () => {
   return (
-    <div>
+    <div className="main">
       <HeaderComponent
         rogoImageUrl={HEADER_LOGO_ROOT}
         headerTabs={HEADER_TABS}

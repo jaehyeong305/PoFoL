@@ -80,6 +80,15 @@ const ProfileInfoContainer: React.FC = () => {
                 <img
                   src="/images/skill-icons/typescriptlang-icon.svg"
                   alt="typescript"
+                  style={{
+                    width: "30px",
+                    verticalAlign: "top",
+                    margin: "15px 3px 0 0",
+                  }}
+                />
+                <img
+                  src="/images/skill-icons/typescriptlang-ar21.svg"
+                  alt="typescript"
                 />
               </Tooltip>
             </div>
@@ -91,6 +100,15 @@ const ProfileInfoContainer: React.FC = () => {
               <Tooltip value="typescript">
                 <img
                   src="/images/skill-icons/typescriptlang-icon.svg"
+                  alt="typescript"
+                  style={{
+                    width: "30px",
+                    verticalAlign: "top",
+                    margin: "15px 3px 0 0",
+                  }}
+                />
+                <img
+                  src="/images/skill-icons/typescriptlang-ar21.svg"
                   alt="typescript"
                 />
               </Tooltip>

@@ -65,11 +65,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (
 
   return (
     <div className="header-container">
-      <header
-        className={`header ${showHeader ? "show" : "hide"} ${
-          props.hasScrollEvent ? "" : "fixed-header"
-        }`}
-      >
+      <header className={`header ${showHeader ? "show" : "hide"}`}>
         <img src={props.rogoImageUrl} className="logo" alt="logo" />
         {props.headerTabs.map((tab, index) => (
           <div className="tab-wrapper" key={index}>
@@ -94,7 +90,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (
           </div>
         ))}
       </header>
-        {!props.hasScrollEvent&&(<div className="empty-box"></div>)}
+      {!props.hasScrollEvent && <div className="empty-box"></div>}
     </div>
   );
 };

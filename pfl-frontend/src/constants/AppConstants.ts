@@ -12,11 +12,11 @@ export const HEADER_TABS: HeaderTab[] = [
         headerTabChilds: [
             {
                 headerTabChildName: '개인정보',
-                headerTabChildRoot: 'profile'
+                headerTabChildRoot: '/profile/info'
             },
             {
                 headerTabChildName: '학력/경력',
-                headerTabChildRoot: 'career'
+                headerTabChildRoot: '/career'
             },
             {
                 headerTabChildName: '어학',
