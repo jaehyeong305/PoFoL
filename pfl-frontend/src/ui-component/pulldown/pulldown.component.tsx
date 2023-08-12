@@ -3,6 +3,7 @@ import './pulldown.component.scss';
 import { useDispatch } from 'react-redux';
 import { setHoveredTab } from 'store/pulldown.store';
 import { HeaderTabChild } from 'ui-component/header/header.component';
+import { Link } from "react-router-dom";
 
 type PulldownProps = {
   tabName: string;
@@ -24,7 +25,9 @@ const PulldownComponent: React.FC<PulldownProps> = (props: PulldownProps) => {
   return (
     <div className="pulldown" onMouseEnter={() => handleMouseEnter(props.tabName)} onMouseLeave={handleMouseLeave}>
       {props.headerTabChilds.map((child, index) => (
-        <span key={index}>{child.headerTabChildName}</span>
+        <Link to={child.headerTabChildRoot}>
+          <span key={index}>{child.headerTabChildName}</span>
+        </Link>
       ))}
     </div>
   );

@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainContainer from "containers/main/main.container";
 import { ScrollProvider } from 'context/scroll.context';
+import ProfileInfoContainer from "containers/profile/profile-info.container";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,6 +18,7 @@ root.render(
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<MainContainer/>}></Route>
+                    <Route path="/profile/info" element={<ProfileInfoContainer/>}></Route>
                 </Routes>
             </BrowserRouter>
         </ScrollProvider>

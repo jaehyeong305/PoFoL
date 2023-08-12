@@ -5,18 +5,18 @@ import {
 import {HeaderTab} from "ui-component/header/header.component";
 
 // for Header
-export const HEADER_LOGO_ROOT: string = 'images/logo-black-removebg.png';
+export const HEADER_LOGO_ROOT: string = '/images/logo/logo_white.svg';
 export const HEADER_TABS: HeaderTab[] = [
     {
         headerTabName: 'Profile',
         headerTabChilds: [
             {
                 headerTabChildName: '개인정보',
-                headerTabChildRoot: 'profile'
+                headerTabChildRoot: '/profile/info'
             },
             {
                 headerTabChildName: '학력/경력',
-                headerTabChildRoot: 'career'
+                headerTabChildRoot: '/career'
             },
             {
                 headerTabChildName: '어학',
@@ -132,22 +132,22 @@ export const MAIN_CAREER_ITEMS: MainCareerItemProps[] = [
 
 export const MAIN_CORE_COMPETENCIES_ITEMS: MainCoreCompetenciesItemProps[] = [
     {
-        imageUrl: "images/core-competencies/core1.png",
+        imageUrl: "/images/core-competencies/core1.png",
         itemTitle: "풀스택 개발 경험",
         itemDescription: "풀스택 개발 경험을 통해 프로젝트의 전반적인 흐름을 이해하고, 문제 발생 시 빠르게 대응하며 효율적인 솔루션을 제공할 수 있습니다."
     },
     {
-        imageUrl: "images/core-competencies/core2.png",
+        imageUrl: "/images/core-competencies/core2.png",
         itemTitle: "프론트엔드 프레임워크(Angular) 개발 경험",
         itemDescription: "취약성이 발견된 AngularJS에서 Angular12 버전으로 업그레이드하며 코드 리팩토링과 아키텍처 통일화 작업을 수행한 경험을 통해 안정적이고 유지보수 가능한 코드베이스를 구축할 수 있습니다."
     },
     {
-        imageUrl: "images/core-competencies/core3.png",
+        imageUrl: "/images/core-competencies/core3.png",
         itemTitle: "다른 직종과의 협업과 커뮤니케이션 능력",
         itemDescription: "각 팀원의 전문성과 역할을 이해하고, 서로를 존중하는것이 중요합니다. 디자이너와 개발자들이 서로의 제안을 수용하고 협력하여 최적의 사용자 경험을 만들 수 있었습니다."
     },
     {
-        imageUrl: "images/core-competencies/core4.png",
+        imageUrl: "/images/core-competencies/core4.png",
         itemTitle: "유연한 적응력으로 글로벌 환경에서의 협업 경험",
         itemDescription: "저는 새로운 문화와 규칙에 적응한 경험이 있고 다양한 배경과 가치관을 가진 사람들과 함께 일한 경험이 있습니다. 이를 통해 저는 다른 문화에 대한 이해와 존중, 그리고 적응력을 키웠습니다."
     }
