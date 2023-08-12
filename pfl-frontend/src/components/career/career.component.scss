@@ -1,0 +1,26 @@
+div.career-container {
+    margin-top: 150px;
+    background-color: rgba(#ffffff, 0.5);
+    overflow-x: hidden;
+    
+    h2 {
+        padding: 20px;
+        text-align: center;
+        color: #27374D;
+    }
+    
+    div.table-container {
+        margin-left: 100px;
+    }
+    div.table-container > table.hajae-table > tbody > tr > td {
+        padding: 10px 50px 0 50px;
+    }
+
+    > hr {
+        margin: 10px 100px;
+        border: solid 2px #9DB2BF;
+    }
+
+    > div.career-info {
+    }
+}

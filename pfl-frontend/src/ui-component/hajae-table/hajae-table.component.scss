@@ -2,7 +2,7 @@ div.table-container {
     table-layout: fixed;
     margin: 20px;
     width: 100%;
-    
+
     > table.hajae-table {
         > tbody > tr > th {
             width: 120px;
@@ -11,9 +11,19 @@ div.table-container {
             text-align: right;
             font-weight: 500;
         }
-    
+
         > tbody > tr > td {
             padding-top: 10px;
+
+            &.table-title {
+                color: #16547e;
+                font-weight: 500;
+            }
+
+            > ul, ol {
+                margin-block-start: 5px;
+                margin-inline-start: -20px;
+            }
         }
     }
 }
