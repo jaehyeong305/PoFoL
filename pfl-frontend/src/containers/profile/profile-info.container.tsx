@@ -3,6 +3,7 @@ import React from "react";
 import "./profile-info.container.scss";
 import HajaeTable from "ui-component/hajae-table/hajae-table.component";
 import HeaderComponent from "ui-component/header/header.component";
+import Tooltip from "ui-component/tooltip/tooltip.component";
 
 const ProfileInfoContainer: React.FC = () => {
   return (
@@ -66,49 +67,82 @@ const ProfileInfoContainer: React.FC = () => {
           <div className="core-competencies-info-container">
             <div className="core-competencies-info-item">
               <span className="item-title">◼︎ Full-Stack 개발자 (2년)</span>
-              <img src="/images/skill-icons/scala-lang-ar21.svg" alt="scala" />
-              <img src="/images/skill-icons/angular-ar21.svg" alt="angular" />
-              <img
-                src="/images/skill-icons/typescriptlang-icon.svg"
-                alt="typescript"
-              />
-              {/*<span>• Scala (PlayFramework), TypeScript(AngularJS)</span>*/}
+              <Tooltip value="scala">
+                <img
+                  src="/images/skill-icons/scala-lang-ar21.svg"
+                  alt="scala"
+                />
+              </Tooltip>
+              <Tooltip value="angular">
+                <img src="/images/skill-icons/angular-ar21.svg" alt="angular" />
+              </Tooltip>
+              <Tooltip value="typescript">
+                <img
+                  src="/images/skill-icons/typescriptlang-icon.svg"
+                  alt="typescript"
+                />
+              </Tooltip>
             </div>
             <div className="core-competencies-info-item">
               <span className="item-title">◼︎ Front-End 개발자 (2년)</span>
-              <img src="/images/skill-icons/angular-ar21.svg" alt="angular" />
-              <img
-                src="/images/skill-icons/typescriptlang-icon.svg"
-                alt="typescript"
-              />
-              <img src="/images/skill-icons/w3_html5-ar21.svg" alt="html" />
-              <img src="/images/skill-icons/w3_css-ar21.svg" alt="css" />
-              {/*<span>• TypeScript(AngularJS, Angular)</span>*/}
-              {/*<span>• HTML, CSS</span>*/}
+              <Tooltip value="angular">
+                <img src="/images/skill-icons/angular-ar21.svg" alt="angular" />
+              </Tooltip>
+              <Tooltip value="typescript">
+                <img
+                  src="/images/skill-icons/typescriptlang-icon.svg"
+                  alt="typescript"
+                />
+              </Tooltip>
+              <Tooltip value="html">
+                <img src="/images/skill-icons/w3_html5-ar21.svg" alt="html" />
+              </Tooltip>
+              <Tooltip value="css">
+                <img src="/images/skill-icons/w3_css-ar21.svg" alt="css" />
+              </Tooltip>
             </div>
             <div className="core-competencies-info-item">
               <span className="item-title">◼︎ 다양한 툴 사용 경험</span>
               <div className="item-content">
                 <span>1. Scrum으로 개발</span>
                 <span>2. 빌드 및 배포</span>
-                <img
-                  src="/images/skill-icons/js_webpack-icon.svg"
-                  alt="html"
-                  title="webpack"
-                />
-                <img src="/images/skill-icons/jenkins-icon.svg" alt="html" />
-                <img src="/images/skill-icons/amazon_aws-icon.svg" alt="html" />
+                <Tooltip value="Webpack">
+                  <img
+                    src="/images/skill-icons/js_webpack-icon.svg"
+                    alt="Webpack"
+                  />
+                </Tooltip>
+                <Tooltip value="jenkins">
+                  <img
+                    src="/images/skill-icons/jenkins-icon.svg"
+                    alt="jenkins"
+                  />
+                </Tooltip>
+                <Tooltip value="aws">
+                  <img
+                    src="/images/skill-icons/amazon_aws-icon.svg"
+                    alt="aws"
+                  />
+                </Tooltip>
                 <span>3. 커뮤니케이션 도구</span>
-                <img
-                  src="/images/skill-icons/atlassian_jira-icon.svg"
-                  alt="html"
-                />
-                <img src="/images/skill-icons/slack-icon.svg" alt="html" />
-                <img
-                  src="/images/skill-icons/confluentio-icon.svg"
-                  alt="html"
-                />
-                <img src="/images/skill-icons/github-icon.svg" alt="html" />
+                <Tooltip value="jira">
+                  <img
+                    src="/images/skill-icons/atlassian_jira-icon.svg"
+                    alt="jira"
+                  />
+                </Tooltip>
+                <Tooltip value="slack">
+                  <img src="/images/skill-icons/slack-icon.svg" alt="slack" />
+                </Tooltip>
+                <Tooltip value="confluent">
+                  <img
+                    src="/images/skill-icons/confluentio-icon.svg"
+                    alt="html"
+                  />
+                </Tooltip>
+                <Tooltip value="github">
+                  <img src="/images/skill-icons/github-icon.svg" alt="github" />
+                </Tooltip>
               </div>
             </div>
           </div>

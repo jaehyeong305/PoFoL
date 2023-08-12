@@ -93,7 +93,7 @@ div.profile-info-container {
                         font-weight: 400;
                     }
 
-                    > img {
+                    > div.tooltip-container > img {
                         margin-top: 5px;
                         margin-right: 5px;
                         width: 50px;
@@ -112,29 +112,4 @@ div.profile-info-container {
             box-shadow: 5px 5px 10px 0 gray;
         }
     }
-}
-
-.image-container {
-    position: relative;
-    display: inline-block;
-    margin: 10px;
-}
-
-.tooltip {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 5px;
-    border-radius: 4px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-}
-
-.image-container:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
 }
