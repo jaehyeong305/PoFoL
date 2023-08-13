@@ -5,11 +5,13 @@ import { FaExternalLinkSquareAlt } from "@react-icons/all-files/fa/FaExternalLin
 import PulldownComponent from "ui-component/pulldown/pulldown.component";
 import { setHoveredTab } from "store/pulldown.store";
 import { useScrollContext } from "context/scroll.context";
+import { Link } from "react-router-dom";
 
 type HeaderComponentProps = {
   rogoImageUrl: string;
   headerTabs: HeaderTab[];
   hasScrollEvent?: boolean;
+  hideScrollHeight?: number;
 };
 
 export type HeaderTab = {
@@ -37,7 +39,7 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (
         return;
       }
 
-      if (scrollContext > 200) {
+      if (scrollContext > (!!props.hideScrollHeight ? props.hideScrollHeight : 200)) {
         setShowHeader(false);
       } else {
         setShowHeader(true);
@@ -66,7 +68,9 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (
   return (
     <div className="header-container">
       <header className={`header ${showHeader ? "show" : "hide"}`}>
-        <img src={props.rogoImageUrl} className="logo" alt="logo" />
+        <Link to="/">
+          <img src={props.rogoImageUrl} className="logo" alt="logo" />
+        </Link>
         {props.headerTabs.map((tab, index) => (
           <div className="tab-wrapper" key={index}>
             <div

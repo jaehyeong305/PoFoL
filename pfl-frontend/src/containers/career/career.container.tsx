@@ -11,6 +11,7 @@ const CareerContainer: React.FC = () => {
                 rogoImageUrl={HEADER_LOGO_ROOT}
                 headerTabs={HEADER_TABS}
                 hasScrollEvent={true}
+                hideScrollHeight={100}
             />
             <CareerComponent />
         </div>

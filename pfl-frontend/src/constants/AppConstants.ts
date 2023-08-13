@@ -15,7 +15,7 @@ export const HEADER_TABS: HeaderTab[] = [
                 headerTabChildRoot: '/profile/info'
             },
             {
-                headerTabChildName: '학력/경력',
+                headerTabChildName: '경력',
                 headerTabChildRoot: '/career'
             },
             {

@@ -58,7 +58,7 @@ const MainCareerComponent: React.FC = () => {
                 <div className="line-column">
                     <div className={`line ${mainCareerVisible ? "show" : ""}`}></div>
                     <div className="circle-container">
-                        {dateList.map((date, index) => (
+                        {dateList.map((_, index) => (
                             <div key={index}
                                  className={`small-circle ${index <= selectedDateIndex ? "current" : ""}`}></div>
                         ))}
