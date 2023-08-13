@@ -1,4 +1,4 @@
-# Jaehyeong Ha's PortFoLio
+<img width="1510" alt="image" src="https://github.com/jaehyeong305/PoFoL/assets/131584557/e5b98b1c-c0ab-43c0-9c0d-85f67dd174e4"># Jaehyeong Ha's PortFoLio
 
 ## 개발 현황
 [아직 개발중인 페이지](https://jaehyeong305.github.io/)
@@ -7,7 +7,11 @@
 - [x] Main
 - [ ] Profile
   - [x] 개인정보
+  <img width="500" alt="image" src="https://github.com/jaehyeong305/PoFoL/assets/131584557/151485ae-d244-4bc2-b9e1-82f2a34fbac7">
+
   - [x] 경력
+  <img width="500" alt="image" src="https://github.com/jaehyeong305/PoFoL/assets/131584557/3f20bf50-efde-45a2-b25e-f840aa60141f">
+
   - [ ] 어학
   - [ ] 취미
 - [ ] Project
