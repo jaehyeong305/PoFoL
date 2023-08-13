@@ -1,4 +1,4 @@
-<img width="1510" alt="image" src="https://github.com/jaehyeong305/PoFoL/assets/131584557/e5b98b1c-c0ab-43c0-9c0d-85f67dd174e4"># Jaehyeong Ha's PortFoLio
+# Jaehyeong Ha's PortFoLio
 
 ## 개발 현황
 [아직 개발중인 페이지](https://jaehyeong305.github.io/)
