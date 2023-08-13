@@ -1,5 +1,22 @@
 # Jaehyeong Ha's PortFoLio
 
+## 개발 현황
+[아직 개발중인 페이지](https://jaehyeong305.github.io/)
+(Github Pages로 배포중)
+
+- [x] Main
+- [ ] Profile
+  - [x] 개인정보
+  - [x] 경력
+  - [ ] 어학
+  - [ ] 취미
+- [ ] Project
+  - [ ] 차세대 프론트엔드
+  - [ ] 전형흐름관리
+- [ ] Download
+  - [ ] 이력서
+  - [ ] 경력기술서
+
 ### 프로젝트 개요
 가장 많이 사용되고 있어 사용자 커뮤니티가 잘 형성되어 있는 React 공부&경험을 위해
 
