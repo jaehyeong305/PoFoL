@@ -17,12 +17,15 @@ type HeaderComponentProps = {
 export type HeaderTab = {
   headerTabName: string;
   headerTabChilds: HeaderTabChild[];
+  linkUrl?: string;
   isNewWindow?: boolean;
 };
 
 export type HeaderTabChild = {
   headerTabChildName: string;
   headerTabChildRoot: string;
+  fileName?: string;
+  isDownload?: boolean;
 };
 
 const HeaderComponent: React.FC<HeaderComponentProps> = (
@@ -78,9 +81,12 @@ const HeaderComponent: React.FC<HeaderComponentProps> = (
               onMouseEnter={() => handleMouseEnter(tab.headerTabName)}
               onMouseLeave={handleMouseLeave}
             >
-              {tab.headerTabName}
+              {!tab.isNewWindow && (tab.headerTabName)}
               {tab.isNewWindow && (
-                <FaExternalLinkSquareAlt className="icon external-link" />
+                  <a href={tab.linkUrl} target="_blank" rel="noreferrer">
+                    {tab.headerTabName}
+                    <FaExternalLinkSquareAlt className="icon external-link" />
+                  </a>
               )}
             </div>
             {/* NOTE(hajae): hover 여부에 따라 pulldown 표시*/}

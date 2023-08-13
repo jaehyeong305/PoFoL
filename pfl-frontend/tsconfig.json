@@ -8,6 +8,7 @@
       "context/*": ["context/*"],
       "store/*": ["store/*"],
       "images/*": ["../public/images/*"],
+      "download/*": ["../public/download/*"],
       "constants/*": ["./constants/*"]
     },
     "target": "es5",

@@ -44,11 +44,13 @@ export const HEADER_TABS: HeaderTab[] = [
     {
         headerTabName: 'Blog',
         headerTabChilds: [],
+        linkUrl: 'https://velog.io/@hajae305',
         isNewWindow: true,
     },
     {
         headerTabName: 'Github',
         headerTabChilds: [],
+        linkUrl: 'https://github.com/jaehyeong305',
         isNewWindow: true,
     },
     {
@@ -56,11 +58,15 @@ export const HEADER_TABS: HeaderTab[] = [
         headerTabChilds: [
             {
                 headerTabChildName: '이력서',
-                headerTabChildRoot: 'resume'
+                headerTabChildRoot: 'resume',
+                fileName: 'jaehyeong.ha-resume.pdf',
+                isDownload: true,
             },
             {
-                headerTabChildName: '경력기술서',
-                headerTabChildRoot: 'work-experience'
+                headerTabChildName: '자기소개서',
+                headerTabChildRoot: 'self-introduction',
+                fileName: 'jaehyeong.ha-self-introduction.pdf',
+                isDownload: true,
             }
         ]
     },
