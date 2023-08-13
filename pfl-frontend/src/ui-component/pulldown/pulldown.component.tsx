@@ -22,11 +22,23 @@ const PulldownComponent: React.FC<PulldownProps> = (props: PulldownProps) => {
     dispatch(setHoveredTab(''));
   };
 
+  // NOTE(hajae): 이력서 및 자기소개서 다운로드
+  const downloadFile = (isDownload?: boolean, fileName?: string) => {
+    if (!isDownload || !fileName) return;
+
+    const link = document.createElement('a');
+    link.href = "/download/" + fileName;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="pulldown" onMouseEnter={() => handleMouseEnter(props.tabName)} onMouseLeave={handleMouseLeave}>
       {props.headerTabChilds.map((child, index) => (
-        <Link to={child.headerTabChildRoot}>
-          <span key={index}>{child.headerTabChildName}</span>
+        <Link to={child.isDownload ? "" : child.headerTabChildRoot}>
+          <span key={index} onClick={() => downloadFile(child.isDownload, child.fileName)}>{child.headerTabChildName}</span>
         </Link>
       ))}
     </div>

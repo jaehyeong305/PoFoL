@@ -1,10 +1,9 @@
-import {useScrollContext} from 'context/scroll.context';
 import React, {useState, useEffect} from 'react';
 import './main-challenge.component.scss';
 
 const MainChallengeComponent: React.FC = () => {
     const [isImageFixed, setIsImageFixed] = useState(false);
-    const [opacity, setOpacity] = useState(0.7);
+    const [opacity, setOpacity] = useState(1);
     const [textOpacity, setTextOpacity] = useState(1);
     const [transformY, setTransformY] = useState(42);
 
