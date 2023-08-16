@@ -6,10 +6,10 @@ const FooterComponent: React.FC = () => {
         <div className="footer-container">
             <div className="footer-link-container">
                 <div className="footer-link">
-                    <a href="https://github.com/jaehyeong305" target="_blank" rel="noreferrer"><img src="images/github-mark.png" alt="" /></a>
+                    <a href="https://github.com/jaehyeong305" target="_blank" rel="noreferrer"><img src="/images/github-mark.png" alt="" /></a>
                 </div>
                 <div className="footer-link">
-                    <a href="https://velog.io/@hajae305" target="_blank" rel="noreferrer"><img src="images/velog.png" alt="" /></a>
+                    <a href="https://velog.io/@hajae305" target="_blank" rel="noreferrer"><img src="/images/velog.png" alt="" /></a>
                 </div>
             </div>
             <div className="footer-connect">

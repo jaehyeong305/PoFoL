@@ -18,14 +18,6 @@ export const HEADER_TABS: HeaderTab[] = [
                 headerTabChildName: '경력',
                 headerTabChildRoot: '/career'
             },
-            {
-                headerTabChildName: '어학',
-                headerTabChildRoot: 'language'
-            },
-            {
-                headerTabChildName: '취미',
-                headerTabChildRoot: 'hobby'
-            },
         ]
     },
     {
@@ -33,11 +25,11 @@ export const HEADER_TABS: HeaderTab[] = [
         headerTabChilds: [
             {
                 headerTabChildName: '차세대 프론트엔드',
-                headerTabChildRoot: 'frontend'
+                headerTabChildRoot: '/project/frontend'
             },
             {
                 headerTabChildName: '전형흐름 관리',
-                headerTabChildRoot: 'selection-flow'
+                headerTabChildRoot: '/project/selection-flow'
             }
         ]
     },
