@@ -23,6 +23,14 @@ div.table-container {
             > ul, ol {
                 margin-block-start: 5px;
                 margin-inline-start: -20px;
+
+                > li.li-2 {
+                    margin-inline-start: 30px;
+                }
+
+                > li.li-3 {
+                    margin-inline-start: 80px;
+                }
             }
         }
     }

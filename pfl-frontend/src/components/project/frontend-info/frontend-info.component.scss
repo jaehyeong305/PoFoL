@@ -1,0 +1,14 @@
+section.frontend-info-wrapper {
+    margin-top: 50px;
+    padding: 50px 200px;
+    background-color: rgba(#DDE6ED, 0.5);
+    
+    opacity: 0;
+    animation: padeIn 1s ease forwards 3s;
+}
+
+@keyframes padeIn {
+    100% {
+        opacity: 1;
+    }
+}
