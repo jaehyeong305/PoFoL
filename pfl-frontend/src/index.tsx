@@ -10,6 +10,7 @@ import { ScrollProvider } from 'context/scroll.context';
 import ProfileInfoContainer from "containers/profile/profile-info.container";
 import CareerContainer from "containers/career/career.container";
 import FrontendContainer from "containers/frontend/frontend.container";
+import SelectionFlowContainer from "containers/selection-flow/selection-flow.container";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -23,6 +24,7 @@ root.render(
                     <Route path="/profile/info" element={<ProfileInfoContainer/>}></Route>
                     <Route path="/career" element={<CareerContainer/>}></Route>
                     <Route path="/project/frontend" element={<FrontendContainer/>}></Route>
+                    <Route path="/project/selection-flow" element={<SelectionFlowContainer/>}></Route>
                 </Routes>
             </BrowserRouter>
         </ScrollProvider>
