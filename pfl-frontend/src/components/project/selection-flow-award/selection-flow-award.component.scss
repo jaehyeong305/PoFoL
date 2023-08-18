@@ -1,0 +1,41 @@
+section.selection-flow-award-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 200px 0 200px;
+    
+    opacity: 0;
+    animation: padeIn 1s ease forwards 4s;
+    
+    > h1 {
+        font-size: 38px;
+        color: #27374D;
+    }
+    
+    > img {
+        width: 1000px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px 5px #27374D;
+    }
+
+    > div {
+        width: 900px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 50px;
+        background-color: rgba(#DDE6ED, 0.5);
+        border-radius: 10px;
+        
+        > h2 {
+            margin-left: 100px;
+            font-size: 24px;
+            color: #27374D;
+        }
+    }
+}
+
+@keyframes padeIn {
+    100% {
+        opacity: 1;
+    }
+}
