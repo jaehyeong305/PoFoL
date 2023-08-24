@@ -37,8 +37,8 @@ const PulldownComponent: React.FC<PulldownProps> = (props: PulldownProps) => {
   return (
     <div className="pulldown" onMouseEnter={() => handleMouseEnter(props.tabName)} onMouseLeave={handleMouseLeave}>
       {props.headerTabChilds.map((child, index) => (
-        <Link to={child.isDownload ? "" : child.headerTabChildRoot}>
-          <span key={index} onClick={() => downloadFile(child.isDownload, child.fileName)}>{child.headerTabChildName}</span>
+        <Link to={child.isDownload ? "" : child.headerTabChildRoot} key={index}>
+          <span onClick={() => downloadFile(child.isDownload, child.fileName)}>{child.headerTabChildName}</span>
         </Link>
       ))}
     </div>

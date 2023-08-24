@@ -105,7 +105,7 @@ export const MAIN_CAREER_ITEMS: MainCareerItemProps[] = [
             "• 1주 단위 스프린트로 업무를 계획/수행\n" +
             "• CS(Customer Success)와 디자이너와 커뮤니케이션\n" +
             "• 코드리뷰 & 에러감시\n",
-        linkTitle: "더 보기",
+        linkTitle: "",
         linkUrl: "/project/selection-flow",
         linkIsNewWindow: false
     },
@@ -122,7 +122,7 @@ export const MAIN_CAREER_ITEMS: MainCareerItemProps[] = [
             "• 1주 단위 스프린트로 업무를 계획/수행\n" +
             "• CS(Customer Success)와 디자이너와 커뮤니케이션\n" +
             "• 코드리뷰 & 에러감시",
-        linkTitle: "더 보기",
+        linkTitle: "",
         linkUrl: "/project/frontend",
         linkIsNewWindow: false
     }
